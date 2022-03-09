@@ -18,7 +18,7 @@ DROP VIEW IF EXISTS Airlines CASCADE;
 
 -- Define views for your intermediate steps here:
 CREATE VIEW PassBooking AS
-SELECT passenger.id as pass_id, passenger.firstName||passenger.surName as name, booking.flight_id as flight_id
+SELECT passenger.id as pass_id, passenger.firstName||' '||passenger.surName as name, booking.flight_id as flight_id
 FROM passenger join booking on passenger.id = booking.pass_id;
 
 CREATE VIEW Airlines AS

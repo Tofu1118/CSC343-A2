@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3e8ace4-9c93-4828-b892-fdeaa95575ba" name="Changes" comment="Q2 First Commit">
+    <list default="true" id="a3e8ace4-9c93-4828-b892-fdeaa95575ba" name="Changes" comment="Q2 Second Commit">
+      <change afterPath="$PROJECT_DIR$/a2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/q1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/q1.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/q2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/q2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/q3.sql" beforeDir="false" afterPath="$PROJECT_DIR$/q3.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,11 +18,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="267foKKj241fJrNDTXNxD3mmuvD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunConfigurationTargetLRU" value="&#10;59e7e734-6eca-4646-9866-65e459b097b5&#10;bfa5a56e-9846-4255-b967-7c9a2feb8d18" />
     <property name="RunOnceActivity.OpenDatabaseViewOnStart" value="true" />
@@ -29,9 +37,26 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/air_travel.ddl" />
     <property name="settings.editor.selected.configurable" value="database.main2" />
   </component>
-  <component name="RunManager" selected="Database Script.q1.sql">
+  <component name="RunManager" selected="Database Script.air_travel.ddl and 1 more">
+    <configuration name="air_travel.ddl and 1 more" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/air_travel.ddl" />
+      <script-file value="$PROJECT_DIR$/q1.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="q1.sql" type="DatabaseScript" editBeforeRun="true" temporary="true">
+      <script-file value="$PROJECT_DIR$/q1.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
     <configuration name="q1.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/q1.sql" />
+      <script-file value="$PROJECT_DIR$/air_travel.ddl" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="q2.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/q2.sql" />
       <script-mode>FILE</script-mode>
       <method v="2" />
     </configuration>
@@ -59,9 +84,14 @@
     </configuration>
     <list>
       <item itemvalue="Database Script.q1.sql" />
+      <item itemvalue="Database Script.q2.sql" />
+      <item itemvalue="Database Script.air_travel.ddl and 1 more" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Database Script.air_travel.ddl and 1 more" />
+        <item itemvalue="Database Script.q1.sql" />
+        <item itemvalue="Database Script.q2.sql" />
         <item itemvalue="Database Script.q1.sql" />
       </list>
     </recent_temporary>
@@ -79,9 +109,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Committing Data and Queries" />
     <MESSAGE value="Q1 First Commit" />
     <MESSAGE value="Q2 First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Q2 First Commit" />
+    <MESSAGE value="Q2 Second Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Q2 Second Commit" />
   </component>
 </project>

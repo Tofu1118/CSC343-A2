@@ -36,8 +36,8 @@ DROP VIEW IF EXISTS AllRefundInfo CASCADE;
 
 -- Define views for your intermediate steps here:
 CREATE VIEW FlightAirlineInfo AS
-SELECT id, airline, name as airline_name, flight_num, plane, outbound, inbound, scheduled_departure, scheduled_arrival
-FROM flight, join airline on flight.airline = airline.code;
+SELECT id, airline, name as airline_name, flight_num, plane, outbound, inbound, s_dep as scheduled_departure, s_arv as scheduled_arrival
+FROM flight join airline on flight.airline = airline.code;
 
 CREATE VIEW FlightAirportInfo AS
 SELECT FlightAirlineInfo.id as id, airline, airline_name, flight_num, plane, outbound, a1.country as outCountry, inbound, a2.country as inCountry, scheduled_departure, scheduled_arrival
@@ -45,7 +45,7 @@ FROM FlightAirlineInfo, airport a1, airport a2
 WHERE FlightAirlineInfo.outbound = a1.code and FlightAirlineInfo.inbound = a2.code;
 
 CREATE VIEW RealTimes AS
-SELECT departure.flight_id as flight_id, departure.timestamp as real_departure, arrival.timestamp as real_arrival
+SELECT departure.flight_id as flight_id, departure.datetime as real_departure, arrival.datetime as real_arrival
 FROM departure join arrival on departure.flight_id = arrival.flight_id;
 
 CREATE VIEW FlightInfo AS
@@ -78,11 +78,11 @@ EXCEPT
 (SELECT * FROM InternationalVeryLate);
 
 CREATE VIEW ILLInfo AS
-SELECT airline, airline_name as name, year(real_departure) as year, seat_class, price*0.35 as refund
+SELECT airline, airline_name as name, extract(year from real_departure) as year, seat_class, price*0.35 as refund
 FROM InternationalLittleLate;
 
 CREATE VIEW IVLInfo AS
-SELECT airline, airline_name as name, year(real_departure) as year, seat_class, price*0.5 as refund
+SELECT airline, airline_name as name, extract(year from real_departure) as year, seat_class, price*0.5 as refund
 FROM InternationalVeryLate;
 
 CREATE VIEW Domestic AS
@@ -107,11 +107,11 @@ EXCEPT
 (SELECT * FROM DomesticVeryLate);
 
 CREATE VIEW DLLInfo AS
-SELECT airline, airline_name as name, year(real_departure) as year, seat_class, price*0.35 as refund
+SELECT airline, airline_name as name, extract(year from real_departure) as year, seat_class, price*0.35 as refund
 FROM DomesticLittleLate;
 
 CREATE VIEW DVLInfo AS
-SELECT airline, airline_name as name, year(real_departure) as year, seat_class, price*0.5 as refund
+SELECT airline, airline_name as name, extract(year from real_departure) as year, seat_class, price*0.5 as refund
 FROM DomesticVeryLate;
 
 CREATE VIEW AllRefundInfo AS
