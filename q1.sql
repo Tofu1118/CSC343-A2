@@ -13,11 +13,18 @@ CREATE TABLE q1 (
 -- Do this for each of the views that define your intermediate steps.  
 -- (But give them better names!) The IF EXISTS avoids generating an error 
 -- the first time this file is imported.
-DROP VIEW IF EXISTS intermediate_step CASCADE;
-
+DROP VIEW IF EXISTS PassBooking CASCADE;
+DROP VIEW IF EXISTS Airlines CASCADE;
 
 -- Define views for your intermediate steps here:
+CREATE VIEW PassBooking AS
+SELECT passenger.id as pass_id, passenger.firstName||passenger.surName as name, booking.flight_id as flight_id
+FROM passenger join booking on passenger.id = booking.pass_id;
 
+CREATE VIEW Airlines AS
+SELECT pass_id, name, count(distinct flight.id) as airlines
+FROM PassBooking join flight on PassBooking.flight_id = flight.id
+GROUP BY PassBooking.pass_id, PassBooking.name;
 
 -- Your query that answers the question goes below the "insert into" line:
-INSERT INTO q1
+INSERT INTO q1 select * from Airlines;
