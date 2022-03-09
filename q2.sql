@@ -15,8 +15,24 @@ CREATE TABLE q2 (
 -- Do this for each of the views that define your intermediate steps.  
 -- (But give them better names!) The IF EXISTS avoids generating an error 
 -- the first time this file is imported.
+DROP VIEW IF EXISTS FlightAirlineInfo CASCADE;
+DROP VIEW IF EXISTS FlightAirportInfo CASCADE;
 DROP VIEW IF EXISTS RealTimes CASCADE;
-
+DROP VIEW IF EXISTS FlightInfo CASCADE;
+DROP VIEW IF EXISTS RealFlightInfo CASCADE;
+DROP VIEW IF EXISTS International CASCADE;
+DROP VIEW IF EXISTS InternationalLate CASCADE;
+DROP VIEW IF EXISTS InternationalVeryLate CASCADE;
+DROP VIEW IF EXISTS InternationalLittleLate CASCADE;
+DROP VIEW IF EXISTS ILLInfo CASCADE;
+DROP VIEW IF EXISTS IVLInfo CASCADE;
+DROP VIEW IF EXISTS Domestic CASCADE;
+DROP VIEW IF EXISTS DomesticLate CASCADE;
+DROP VIEW IF EXISTS DomesticVeryLate CASCADE;
+DROP VIEW IF EXISTS DomesticLittleLate CASCADE;
+DROP VIEW IF EXISTS DLLInfo CASCADE;
+DROP VIEW IF EXISTS DVLInfo CASCADE;
+DROP VIEW IF EXISTS AllRefundInfo CASCADE;
 
 -- Define views for your intermediate steps here:
 CREATE VIEW FlightAirlineInfo AS
