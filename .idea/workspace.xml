@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3e8ace4-9c93-4828-b892-fdeaa95575ba" name="Changes" comment="Q1 First Commit">
-      <change afterPath="$PROJECT_DIR$/.idea/sqlDataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="a3e8ace4-9c93-4828-b892-fdeaa95575ba" name="Changes" comment="Q2 First Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/q1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/q1.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/q2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/q2.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,6 +81,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Committing Data and Queries" />
     <MESSAGE value="Q1 First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Q1 First Commit" />
+    <MESSAGE value="Q2 First Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Q2 First Commit" />
   </component>
 </project>
