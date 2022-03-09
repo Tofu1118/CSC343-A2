@@ -27,7 +27,12 @@ SELECT n FROM q5_parameters;
 -- HINT: You can answer the question by writing one recursive query below, without any more views.
 -- Your query that answers the question goes below the "insert into" line:
 INSERT INTO q5
-
+WITH RECURSIVE Hopping AS (
+    (SELECT Flight.inbound AS destination, 1 AS num_flights, Flight.s_arv AS arrival_time FROM Flight WHERE Flight.outbound = 'YYZ' AND DATE(Flight.s_dep) = (SELECT day from day))
+    UNION ALL
+    (SELECT Flight.inbound as destination, num_flights + 1 as num_flights, Flight.s_arv AS arrival_time FROM Flight, Hopping WHERE (Flight.outbound = Hopping.destination) AND (Flight.s_dep > Hopping.arrival_time) AND (Flight.s_dep < Hopping.arrival_time + interval '24 hours') AND (num_flights < (select n from n)))
+)
+SELECT destination, num_flights FROM Hopping;
 
 
 
