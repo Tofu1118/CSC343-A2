@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3e8ace4-9c93-4828-b892-fdeaa95575ba" name="Changes" comment="Q2 Second Commit">
-      <change afterPath="$PROJECT_DIR$/a2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="a3e8ace4-9c93-4828-b892-fdeaa95575ba" name="Changes" comment="Q3 First Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/q1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/q1.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/q2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/q2.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/q3.sql" beforeDir="false" afterPath="$PROJECT_DIR$/q3.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/q4.sql" beforeDir="false" afterPath="$PROJECT_DIR$/q4.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +110,7 @@
     <MESSAGE value="Q1 First Commit" />
     <MESSAGE value="Q2 First Commit" />
     <MESSAGE value="Q2 Second Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Q2 Second Commit" />
+    <MESSAGE value="Q3 First Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Q3 First Commit" />
   </component>
 </project>
