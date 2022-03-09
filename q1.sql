@@ -22,7 +22,7 @@ SELECT passenger.id as pass_id, passenger.firstName||passenger.surName as name, 
 FROM passenger join booking on passenger.id = booking.pass_id;
 
 CREATE VIEW Airlines AS
-SELECT pass_id, name, count(distinct flight.id) as airlines
+SELECT pass_id, name, count(distinct flight.airline) as airlines
 FROM PassBooking join flight on PassBooking.flight_id = flight.id
 GROUP BY PassBooking.pass_id, PassBooking.name;
 
