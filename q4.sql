@@ -30,7 +30,7 @@ DROP VIEW IF EXISTS FinalRelation CASCADE;
 
 -- Define views for your intermediate steps here:
 CREATE VIEW BookedPlanes AS
-SELECT plane.tail_number as tail_number, airline, capacity_economy + capacity_business + capacity_first as capacity,
+SELECT plane.tail_number as tail_number, plane.airline, capacity_economy + capacity_business + capacity_first as capacity,
        flight.id as flight_id, booking.id as booking_id
 FROM plane, Flight, Booking
 WHERE plane.tail_number = Flight.plane
@@ -81,7 +81,7 @@ UNION
 (SELECT * FROM High);
 
 CREATE VIEW AllPlaneInfo AS
-SELECT Plane.tail_number as tail_number, flight_id, airline, very_low, low, fair, normal, high
+SELECT Plane.tail_number as tail_number, flight_id, plane.airline, very_low, low, fair, normal, high
 FROM Plane left outer join AllFlightInfo
 ON Plane.tail_number = AllFlightInfo.tail_number;
 
