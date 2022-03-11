@@ -29,15 +29,19 @@ DROP VIEW IF EXISTS AllPlaneInfo CASCADE;
 DROP VIEW IF EXISTS FinalRelation CASCADE;
 
 -- Define views for your intermediate steps here:
+CREATE VIEW BookedFlights AS
+SELECT flight.id as flight_id, booking.id as booking_id, flight.plane as plane
+FROM Flight LEFT OUTER JOIN Booking
+On Flight.id = Booking.flight_id;
+
 CREATE VIEW BookedPlanes AS
 SELECT plane.tail_number as tail_number, plane.airline, capacity_economy + capacity_business + capacity_first as capacity,
-       flight.id as flight_id, booking.id as booking_id
-FROM plane, Flight, Booking
-WHERE plane.tail_number = Flight.plane
-AND Flight.id = Booking.flight_id;
+       flight_id, booking_id
+FROM plane, BookedFlights
+WHERE plane.tail_number = BookedFlights.plane;
 
 CREATE VIEW PlaneFlightByCapacity AS
-SELECT tail_number, flight_id, airline, count(booking_id)/avg(capacity) as flight_capacity
+SELECT tail_number, flight_id, airline, (case when count(booking_id) is null then 0 else count(booking_id) end)/avg(capacity) as flight_capacity
 FROM BookedPlanes
 GROUP BY tail_number, flight_id, airline;
 
@@ -86,7 +90,7 @@ FROM Plane left outer join AllFlightInfo
 ON Plane.tail_number = AllFlightInfo.tail_number;
 
 CREATE VIEW FinalRelation AS
-SELECT airline, tail_number, sum(very_low) as very_low, sum(low) as low, sum(fair) as fair, sum(normal) as normal, sum(high) as high
+SELECT airline, tail_number, sum(case when very_low is null then 0 else very_low end) as very_low, sum(case when low is null then 0 else low end) as low, sum(case when fair is null then 0 else fair end) as fair, sum(case when normal is null then 0 else normal end) as normal, sum(case when high is null then 0 else high end) as high
 FROM AllPlaneInfo
 GROUP BY airline, tail_number;
 
@@ -94,3 +98,4 @@ GROUP BY airline, tail_number;
 INSERT INTO q4
 SELECT *
 FROM FinalRelation;
+
